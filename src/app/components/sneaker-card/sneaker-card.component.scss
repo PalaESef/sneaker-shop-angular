@@ -1,0 +1,52 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;               // fixed width
+  height: 350px;              // fixed height to make all cards equal
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    width: 100%;
+    height: 200px;            // consistent image height
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    flex-grow: 1;             // allow description to fill space
+    margin: 0.25rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  strong {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  button {
+    margin-top: auto;
+    padding: 0.5rem 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+}

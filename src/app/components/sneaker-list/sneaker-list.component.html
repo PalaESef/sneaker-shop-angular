@@ -1,0 +1,12 @@
+<div class="list-wrapper">
+
+  <div class="sneaker-list">
+    @for (sneaker of filteredSneakers; track sneaker.id) {
+    <app-sneaker-card [sneaker]="sneaker" (orderNow)="onOrder($event)" />
+    }
+  </div>
+
+  <div *ngIf="selectedSneaker()">
+    <h3>You selected: {{ selectedSneaker() }}</h3>
+  </div>
+</div>

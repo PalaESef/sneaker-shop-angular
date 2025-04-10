@@ -1,0 +1,7 @@
+<div class="card">
+  <img [src]="sneaker.imageUrl" [alt]="sneaker.name" />
+  <h3>{{ sneaker.name }}</h3>
+  <p>{{ sneaker.description }}</p>
+  <strong>{{ sneaker.price | currency }}</strong>
+  <button (click)="onOrderNow()">Order Now</button>
+</div>

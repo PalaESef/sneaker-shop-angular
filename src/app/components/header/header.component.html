@@ -1,0 +1,18 @@
+<header [ngStyle]="{'background-image': 'url(/assets/1.jpg)'}" class="hero-header">
+  <nav class="nav-bar">
+    <h1 class="logo">Sneaker Store</h1>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <input type="text" [ngModel]="searchService.search$.value" (ngModelChange)="searchService.search$.next($event)"
+      placeholder="Search for a sneaker..." class="search-bar" />
+  </nav>
+
+  <div class="overlay">
+    <h1>Welcome to Flight Club</h1>
+    <p *ngIf="selectedSneaker">You selected: <strong>{{ selectedSneaker }}</strong></p>
+    <button class="cta-btn">Shop Now</button>
+  </div>
+</header>

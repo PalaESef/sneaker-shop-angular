@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { SneakerListComponent } from './components/sneaker-list/sneaker-list.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, SneakerListComponent, HeaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'sneaker-shop-angular';
+  selectedSneaker = signal<string | null>(null);
+
+  updateSelectedSneaker(name: string) {
+    this.selectedSneaker.set(name);
+  }
 }
