@@ -1,2 +1,6 @@
-<app-header></app-header>
-<app-sneaker-list></app-sneaker-list>
+<app-header [selectedSneaker]="selectedSneaker()" (shopNowClick)="onShopNow()" />
+
+<!-- Rendează SneakerList doar pe homepage -->
+<app-sneaker-list #sneakerList *ngIf="isHomeRoute" />
+
+<router-outlet *ngIf="!isHomeRoute"></router-outlet>

@@ -1,11 +1,12 @@
 // src/app/components/sneaker-list/sneaker-list.component.ts
-import { Component, inject, signal } from '@angular/core';
+import { Component, ViewChild, ElementRef, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SneakerService } from '../../services/sneaker.service';
 import { SneakerCardComponent } from '../sneaker-card/sneaker-card.component';
 import { SearchService } from '../../services/search.service';
 import { Sneaker } from '../../models/sneaker.model';
+
 
 @Component({
   selector: 'app-sneaker-list',
@@ -20,6 +21,8 @@ export class SneakerListComponent {
 
   selectedSneaker = signal<string | null>(null);
 
+  @ViewChild('sneakerList') sneakerListRef!: ElementRef<HTMLDivElement>;
+
   get filteredSneakers(): Sneaker[] {
     const allSneakers = this.sneakerService.getSneakers()();
     const searchValue = this.searchService.search$.value.toLowerCase();
@@ -28,5 +31,10 @@ export class SneakerListComponent {
 
   onOrder(name: string) {
     this.selectedSneaker.set(name);
+  }
+
+  scrollToList() {
+    console.log('scrollToList called');
+    this.sneakerListRef?.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 }

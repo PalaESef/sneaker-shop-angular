@@ -1,9 +1,9 @@
 <header [ngStyle]="{'background-image': 'url(/assets/1.jpg)'}" class="hero-header">
   <nav class="nav-bar">
-    <h1 class="logo">Sneaker Store</h1>
+    <h1 class="logo">Flight Club</h1>
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/about">About</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
     <input type="text" [ngModel]="searchService.search$.value" (ngModelChange)="searchService.search$.next($event)"
@@ -11,8 +11,8 @@
   </nav>
 
   <div class="overlay">
-    <h1>Welcome to Flight Club</h1>
+    <h1>Welcome to <span class="flight-logo">Flight Club</span></h1>
     <p *ngIf="selectedSneaker">You selected: <strong>{{ selectedSneaker }}</strong></p>
-    <button class="cta-btn">Shop Now</button>
+    <button class="cta-btn" (click)="onShopNow()">Shop Now</button>
   </div>
 </header>
