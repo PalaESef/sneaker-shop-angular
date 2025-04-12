@@ -12,6 +12,11 @@ export const routes: Routes = [
     component: AboutComponent
   },
   {
+    path: 'contact',
+    loadComponent: () =>
+      import('./pages/contact/contact.component').then((m) => m.ContactComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

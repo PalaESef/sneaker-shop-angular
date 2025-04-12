@@ -1,0 +1,100 @@
+.contact {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 20px;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.contact .contactForm {
+  width: 800px;
+  max-width: 90%;
+  margin-top: 30px;
+}
+
+.contact .contactForm .row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.contact .contactForm .col150 {
+  flex: 1 1 calc(50% - 20px);
+  min-width: 250px;
+}
+
+.contact .contactForm .col100 {
+  width: 100%;
+  text-align: center;
+}
+
+.contact .contactForm input,
+.contact .contactForm textarea {
+  width: 100%;
+  padding: 16px;
+  background: #111;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.contact .contactForm textarea {
+  height: 140px;
+  resize: none;
+}
+
+.contact .contactForm input[type="submit"] {
+  background: #00bcd4;
+  color: #fff;
+  padding: 14px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  max-width: 200px;
+  margin-top: 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.contact .contactForm input[type="submit"]:hover {
+  background: #0097a7;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.title h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: #fff;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+.title p {
+  font-size: 18px;
+  color: #ccc;
+  margin-top: 10px;
+}
+

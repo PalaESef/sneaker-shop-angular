@@ -4,7 +4,7 @@
     <ul class="nav-links">
       <li><a routerLink="/">Home</a></li>
       <li><a routerLink="/about">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
     </ul>
     <input type="text" [ngModel]="searchService.search$.value" (ngModelChange)="searchService.search$.next($event)"
       placeholder="Search for a sneaker..." class="search-bar" />
